@@ -1,5 +1,14 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const header = document.querySelector('.site-header');
+
+const updateHeader = () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+};
+
+updateHeader();
+window.addEventListener('scroll', updateHeader, { passive: true });
+
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav');
 

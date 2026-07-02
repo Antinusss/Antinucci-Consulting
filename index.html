@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="is-home">
 
 <header class="site-header">
   <div class="container header-inner">
@@ -31,41 +31,41 @@
 <main id="top">
 
   <section class="hero">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <p class="eyebrow reveal">Nexa Digital</p>
-        <h1 class="reveal">Sourcing in Cina.<br>Vendita online.<br><span class="accent">Zero intoppi.</span></h1>
-        <p class="hero-lead reveal">Un network di freelancer che si supportano a vicenda. Competenze verticali, coordinate da una visione orizzontale di business.</p>
-        <div class="hero-actions reveal">
-          <a href="#contatti" class="btn btn-primary">Parliamo del tuo progetto</a>
-          <a href="#servizi" class="btn btn-ghost">Scopri i servizi</a>
-        </div>
-      </div>
-      <div class="hero-blob" aria-hidden="true">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-      </div>
+    <div class="hero-bg" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
     </div>
-    <div class="marquee">
-      <div class="marquee-track">
-        <span>Sourcing Cina</span><span class="dot">*</span>
-        <span>Website</span><span class="dot">*</span>
-        <span>E-Commerce</span><span class="dot">*</span>
-        <span>Meta Ads</span><span class="dot">*</span>
-        <span>Google Ads</span><span class="dot">*</span>
-        <span>Email Marketing</span><span class="dot">*</span>
-        <span>AI Advisory</span><span class="dot">*</span>
-        <span>Sourcing Cina</span><span class="dot">*</span>
-        <span>Website</span><span class="dot">*</span>
-        <span>E-Commerce</span><span class="dot">*</span>
-        <span>Meta Ads</span><span class="dot">*</span>
-        <span>Google Ads</span><span class="dot">*</span>
-        <span>Email Marketing</span><span class="dot">*</span>
-        <span>AI Advisory</span><span class="dot">*</span>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-text">
+      <p class="eyebrow reveal">Nexa Digital</p>
+      <h1 class="reveal">Sourcing in Cina.<br>Vendita online.<br><span class="accent">Zero intoppi.</span></h1>
+      <p class="hero-lead reveal">Un network di freelancer che si supportano a vicenda. Competenze verticali, coordinate da una visione orizzontale di business.</p>
+      <div class="hero-actions reveal">
+        <a href="#contatti" class="btn btn-primary">Parliamo del tuo progetto</a>
+        <a href="#servizi" class="btn btn-ghost">Scopri i servizi</a>
       </div>
     </div>
   </section>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Sourcing Cina</span><span class="dot">*</span>
+      <span>Website</span><span class="dot">*</span>
+      <span>E-Commerce</span><span class="dot">*</span>
+      <span>Meta Ads</span><span class="dot">*</span>
+      <span>Google Ads</span><span class="dot">*</span>
+      <span>Email Marketing</span><span class="dot">*</span>
+      <span>AI Advisory</span><span class="dot">*</span>
+      <span>Sourcing Cina</span><span class="dot">*</span>
+      <span>Website</span><span class="dot">*</span>
+      <span>E-Commerce</span><span class="dot">*</span>
+      <span>Meta Ads</span><span class="dot">*</span>
+      <span>Google Ads</span><span class="dot">*</span>
+      <span>Email Marketing</span><span class="dot">*</span>
+      <span>AI Advisory</span><span class="dot">*</span>
+    </div>
+  </div>
 
   <section id="servizi" class="services">
     <div class="container">
@@ -75,82 +75,117 @@
 
     <div class="service-list">
 
-      <article class="service-row reveal">
-        <div class="service-copy">
-          <span class="service-num">01</span>
+      <a href="servizi/scouting-sourcing-cina.html" class="service-card reveal">
+        <span class="service-num">01</span>
+        <div class="service-heading">
+          <p class="eyebrow">Sourcing</p>
           <h3>Scouting &amp; Sourcing dalla Cina</h3>
+        </div>
+        <div class="service-desc">
           <p>Troviamo il fornitore giusto, non il primo disponibile. Selezione, verifica, negoziazione: tu ricevi il prodotto pronto per il mercato, non un rischio da gestire.</p>
+          <div class="service-tags">
+            <span class="tag">Analisi fornitori</span>
+            <span class="tag">Verifica qualità</span>
+            <span class="tag">Negoziazione</span>
+          </div>
         </div>
-        <div class="service-media">
-          <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=1200&q=75&auto=format&fit=crop" alt="Vista aerea di un terminal container per il trasporto merci">
-        </div>
-      </article>
+      </a>
 
-      <article class="service-row reveal reverse">
-        <div class="service-copy">
-          <span class="service-num">02</span>
+      <a href="servizi/website-set-up-management.html" class="service-card reveal">
+        <span class="service-num">02</span>
+        <div class="service-heading">
+          <p class="eyebrow">Web</p>
           <h3>Website Set Up &amp; Management</h3>
+        </div>
+        <div class="service-desc">
           <p>Un sito che lavora per te, non un progetto che finisce in un cassetto. Lo costruiamo, lo teniamo aggiornato, lo facciamo crescere insieme al business.</p>
+          <div class="service-tags">
+            <span class="tag">UX/UI</span>
+            <span class="tag">SEO tecnico</span>
+            <span class="tag">Manutenzione</span>
+          </div>
         </div>
-        <div class="service-media">
-          <img src="https://images.unsplash.com/photo-1637502875124-eb4a9843a2fa?w=1200&q=75&auto=format&fit=crop" alt="Laptop con un sito portfolio aperto su una scrivania">
-        </div>
-      </article>
+      </a>
 
-      <article class="service-row reveal">
-        <div class="service-copy">
-          <span class="service-num">03</span>
+      <a href="servizi/ecommerce-set-up-management.html" class="service-card reveal">
+        <span class="service-num">03</span>
+        <div class="service-heading">
+          <p class="eyebrow">E-Commerce</p>
           <h3>E-Commerce Set Up &amp; Management</h3>
+        </div>
+        <div class="service-desc">
           <p>Dallo store online alla gestione quotidiana: prodotti, pagamenti, spedizioni, tutto configurato per vendere dal primo giorno — e continuare a vendere anche dopo.</p>
+          <div class="service-tags">
+            <span class="tag">Catalogo</span>
+            <span class="tag">Pagamenti</span>
+            <span class="tag">Logistica</span>
+          </div>
         </div>
-        <div class="service-media">
-          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1200&q=75&auto=format&fit=crop" alt="Magazzino con scaffalature piene di scatole pronte per la spedizione">
-        </div>
-      </article>
+      </a>
 
-      <article class="service-row reveal reverse">
-        <div class="service-copy">
-          <span class="service-num">04</span>
+      <a href="servizi/meta-ads.html" class="service-card reveal">
+        <span class="service-num">04</span>
+        <div class="service-heading">
+          <p class="eyebrow">Advertising</p>
           <h3>Meta Ads</h3>
+        </div>
+        <div class="service-desc">
           <p>Budget investito, non bruciato. Campagne su Instagram e Facebook pensate per portare risultati misurabili, non solo "mi piace".</p>
+          <div class="service-tags">
+            <span class="tag">Creatività</span>
+            <span class="tag">Targeting</span>
+            <span class="tag">Ottimizzazione</span>
+          </div>
         </div>
-        <div class="service-media">
-          <img src="https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?w=1200&q=75&auto=format&fit=crop" alt="Persona che tiene uno smartphone con i social media sullo schermo">
-        </div>
-      </article>
+      </a>
 
-      <article class="service-row reveal">
-        <div class="service-copy">
-          <span class="service-num">05</span>
+      <a href="servizi/google-ads.html" class="service-card reveal">
+        <span class="service-num">05</span>
+        <div class="service-heading">
+          <p class="eyebrow">Advertising</p>
           <h3>Google Ads</h3>
+        </div>
+        <div class="service-desc">
           <p>Ti troviamo dove il cliente sta già cercando. Campagne mirate su ricerca e shopping, ottimizzate per convertire, non solo per apparire.</p>
+          <div class="service-tags">
+            <span class="tag">Ricerca</span>
+            <span class="tag">Shopping</span>
+            <span class="tag">Conversioni</span>
+          </div>
         </div>
-        <div class="service-media">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=75&auto=format&fit=crop" alt="Dashboard di analisi dati e performance su schermo laptop">
-        </div>
-      </article>
+      </a>
 
-      <article class="service-row reveal reverse">
-        <div class="service-copy">
-          <span class="service-num">06</span>
+      <a href="servizi/email-marketing.html" class="service-card reveal">
+        <span class="service-num">06</span>
+        <div class="service-heading">
+          <p class="eyebrow">Retention</p>
           <h3>Email Marketing</h3>
+        </div>
+        <div class="service-desc">
           <p>La lista clienti è un asset, non un file dimenticato. Flussi automatici e campagne che trasformano chi ti conosce già in chi compra di nuovo.</p>
+          <div class="service-tags">
+            <span class="tag">Automazioni</span>
+            <span class="tag">Segmentazione</span>
+            <span class="tag">Copy</span>
+          </div>
         </div>
-        <div class="service-media">
-          <img src="https://images.unsplash.com/photo-1683117927786-f146451082fb?w=1200&q=75&auto=format&fit=crop" alt="Icona 3D di una busta email">
-        </div>
-      </article>
+      </a>
 
-      <article class="service-row reveal">
-        <div class="service-copy">
-          <span class="service-num">07</span>
+      <a href="servizi/ai-advisory.html" class="service-card reveal">
+        <span class="service-num">07</span>
+        <div class="service-heading">
+          <p class="eyebrow">Advisory</p>
           <h3>AI Advisory</h3>
+        </div>
+        <div class="service-desc">
           <p>Capiamo dove l'intelligenza artificiale ti fa risparmiare tempo davvero — e dove è solo hype. Consulenza pratica, applicabile da subito al tuo business.</p>
+          <div class="service-tags">
+            <span class="tag">Audit processi</span>
+            <span class="tag">Use case</span>
+            <span class="tag">Adozione</span>
+          </div>
         </div>
-        <div class="service-media">
-          <img src="https://images.unsplash.com/photo-1674027444485-cec3da58eef4?w=1200&q=75&auto=format&fit=crop" alt="Rete neurale astratta 3D che rappresenta l'intelligenza artificiale">
-        </div>
-      </article>
+      </a>
 
     </div>
   </section>
