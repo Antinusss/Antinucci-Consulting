@@ -212,7 +212,7 @@ a { color: inherit; text-decoration: none; }
 
 .hero-text {
   max-width: 680px;
-  padding: 150px 0 100px;
+  padding: 200px 0 100px;
 }
 
 .hero .eyebrow { color: var(--accent-2); }
