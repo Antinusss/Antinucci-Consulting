@@ -215,7 +215,19 @@
       <h2 class="section-title reveal">Parliamo del tuo prossimo progetto.</h2>
       <p class="contact-lead reveal">Scrivici, senza impegno. Ti rispondiamo noi, non un bot.</p>
 
-      <div class="lead-quiz reveal" id="leadQuiz">
+      <div class="contact-switcher reveal" id="contactSwitcher">
+        <button class="switcher-btn is-active" data-target="quiz" type="button">
+          🧭 Fai il quiz
+          <span class="switcher-sub">60 secondi, risposte più mirate</span>
+        </button>
+        <button class="switcher-btn" data-target="form" type="button">
+          ✍️ Compila il form
+          <span class="switcher-sub">Diretto, se sai già cosa ti serve</span>
+        </button>
+      </div>
+
+      <div class="contact-panel is-active reveal" data-panel="quiz">
+      <div class="lead-quiz" id="leadQuiz">
         <div class="quiz-progress"><span class="quiz-progress-bar" id="quizProgressBar"></span></div>
 
         <div class="quiz-step is-active" data-step="1">
@@ -333,6 +345,42 @@
           </div>
 
           <button class="quiz-restart" id="quizRestart" type="button">Ricomincia il quiz</button>
+        </div>
+      </div>
+      </div>
+
+      <div class="contact-panel" data-panel="form">
+        <div class="direct-form-card">
+          <p class="quiz-question">Scrivici direttamente</p>
+          <p class="quiz-result-text">Raccontaci in poche righe di cosa hai bisogno — ti rispondiamo noi, non un modulo automatico.</p>
+
+          <form class="quiz-form" id="directForm" novalidate>
+            <label class="quiz-field">
+              <span class="quiz-field-label">Nome</span>
+              <input type="text" id="directNome" name="nome" required placeholder="Come ti chiami?">
+            </label>
+            <label class="quiz-field">
+              <span class="quiz-field-label">Email</span>
+              <input type="email" id="directEmail" name="email" required placeholder="nome@azienda.com">
+            </label>
+            <label class="quiz-field">
+              <span class="quiz-field-label">Sito azienda</span>
+              <input type="text" id="directSito" name="sito" placeholder="www.tuosito.com (opzionale)">
+            </label>
+            <label class="quiz-field">
+              <span class="quiz-field-label">Note</span>
+              <textarea id="directNote" name="note" rows="4" placeholder="Di cosa hai bisogno? (opzionale)"></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary quiz-cta" id="directSubmit">Invia richiesta &rarr;</button>
+          </form>
+
+          <div class="quiz-confirmation" id="directConfirmation">
+            <p class="quiz-confirmation-title">Fatto! 🎉</p>
+            <p class="quiz-confirmation-text">
+              Si è aperto il tuo client email con tutti i dettagli già pronti.
+              Se non si è aperto in automatico, <a href="#" class="quiz-manual-link" id="directManualLink">clicca qui</a>.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -481,6 +529,45 @@
     goToStep(1);
   });
 })();
+
+// Switcher — indipendente dalla IIFE del quiz
+document.querySelectorAll('.switcher-btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('.switcher-btn').forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    var target = btn.dataset.target;
+    document.querySelectorAll('.contact-panel').forEach(function (p) {
+      p.classList.toggle('is-active', p.dataset.panel === target);
+    });
+  });
+});
+
+// Form diretto — submit handler indipendente dal quiz (nessun punteggio priorità)
+document.getElementById('directForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const nome = document.getElementById('directNome').value.trim();
+  const email = document.getElementById('directEmail').value.trim();
+  const sito = document.getElementById('directSito').value.trim();
+  const note = document.getElementById('directNote').value.trim();
+  if (!nome || !email) return;
+
+  const subject = '[Form Senxe] Nuovo contatto — ' + nome;
+  const body =
+    'Nome: ' + nome + '\n' +
+    'Email: ' + email + '\n' +
+    'Sito azienda: ' + (sito || '—') + '\n' +
+    'Note: ' + (note || '—') + '\n\n' +
+    '(inviato dal form diretto sul sito)';
+
+  const mailtoLink = 'mailto:info@senxe.com?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent(body);
+
+  document.getElementById('directManualLink').setAttribute('href', mailtoLink);
+  window.location.href = mailtoLink;
+
+  document.getElementById('directForm').style.display = 'none';
+  document.getElementById('directConfirmation').classList.add('is-visible');
+});
 </script>
 </body>
 </html>
